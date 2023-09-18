@@ -18,11 +18,20 @@ player_width, player_height = 50, 50
 player_x, player_y = (WIDTH - player_width) // 2, HEIGHT - player_height
 player_speed = 0.75
 
+#puntuazioa
+puntuazioa = 0
+contador_puntuacion = 0
+fuente = pygame.font.Font(None, 36)
+
 # Obstáculos
 obstacle_width, obstacle_height = 50, 50
 obstacle_x = random.randint(0, WIDTH - obstacle_width)
 obstacle_y = -obstacle_height
 obstacle_speed = 0.5
+
+def mostrar_puntuacion(puntuacion):
+    texto = fuente.render(f"Puntuación: {puntuacion}", True, WHITE)
+    screen.blit(texto, (10, 10))
 
 # Función para dibujar el personaje en la pantalla
 def draw_player(x, y):
@@ -53,6 +62,12 @@ while running:
     if obstacle_y > HEIGHT:
         obstacle_x = random.randint(0, WIDTH - obstacle_width)
         obstacle_y = -obstacle_height
+        puntuazioa = puntuazioa + 1
+        contador_puntuacion = contador_puntuacion + 1
+
+        if contador_puntuacion % 5 == 0:
+            obstacle_speed += 0.1
+
 
     # Colisión con el obstáculo
     if player_x < obstacle_x + obstacle_width and player_x + player_width > obstacle_x \
@@ -66,6 +81,7 @@ while running:
     # Dibujar el personaje y el obstáculo
     draw_player(player_x, player_y)
     draw_obstacle(obstacle_x, obstacle_y)
+    mostrar_puntuacion(puntuazioa)
 
     # Actualizar la pantalla
     pygame.display.update()
