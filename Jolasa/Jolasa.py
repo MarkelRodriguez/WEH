@@ -16,13 +16,13 @@ RED = (255, 0, 0)
 # Personaje
 player_width, player_height = 50, 50
 player_x, player_y = (WIDTH - player_width) // 2, HEIGHT - player_height
-player_speed = 5
+player_speed = 0.75
 
 # Obstáculos
 obstacle_width, obstacle_height = 50, 50
 obstacle_x = random.randint(0, WIDTH - obstacle_width)
 obstacle_y = -obstacle_height
-obstacle_speed = 3
+obstacle_speed = 0.5
 
 # Función para dibujar el personaje en la pantalla
 def draw_player(x, y):
