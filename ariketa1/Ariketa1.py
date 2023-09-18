@@ -15,7 +15,7 @@ def erabiltzaileakIkusi():
     # Ejecuta la consulta
     cursor.execute(select_query)
 
-    # Recupera todos los resultados de la consulta
+    # Recupera todos los resultados de 1la consulta
     resultados = cursor.fetchall()
 
     # Procesa y muestra los resultados
@@ -26,8 +26,11 @@ def erabiltzaileakIkusi():
     conexion.close()
 
 
-def erabiltzaileakSartu(dni, izena):
-    insert_query = "INSERT INTO erabiltzailea (Dni, edad) VALUES ("+dni +"," + izena+" )"
+def erabiltzaileakSartu():
+
+    dni = input('sartu Dni-a:')
+    izena = input('sartu izena:')
+    insert_query = "INSERT INTO erabiltzailea VALUES ('"+ dni + "','" + izena +"')"
     cursor.execute(insert_query)
     # Confirma los cambios en la base de datos
     conexion.commit()
@@ -35,33 +38,50 @@ def erabiltzaileakSartu(dni, izena):
     # Cierra la conexión a la base de datos
     conexion.close()
 
+def erabiltzaileakEzabatu():
+    izena = input('sartu izena:')
+    delete_query = "DELETE FROM erabiltzailea WHERE Izena = '" + izena +"'"
+    cursor.execute(delete_query)
+    # Confirma los cambios en la base de datos
+    conexion.commit()
 
+    # Cierra la conexión a la base de datos
+    conexion.close()
+
+def erabiltzaileakEguneratu(izena):
+    
+    dniBerria = input('sartu Dni-a:')
+    izenaBerria = input('sartu izena:')
+
+    update_query = "UPDATE erabiltzailea set DNI = '" + dniBerria + "', Izena = '"+izenaBerria + "'WHERE Izena = '" + izena + "'"
+    cursor.execute(update_query)
+    # Confirma los cambios en la base de datos
+    conexion.commit()
+
+    # Cierra la conexión a la base de datos
+    conexion.close()
 
 
 print("1. izen berria sartu")
 print("2. izen guztiak atera")
-print("3. eguneratu")
-print("4. ezabatu")
+print("3. ezabatu")
+print("4. eguneratu")
 opcion = input('sartu eragiketa bat:')
 if opcion == '1':
 
+    erabiltzaileakSartu()
 elif opcion == '2':
-    edad = input('Digita tu edad: ')
-    if edad.isnumeric():
-        print('Tu edad es {}'.format(edad))
-    else:
-        print('Has digitado una edad no valida...')
+    erabiltzaileakIkusi()
 elif opcion == '3':
-    email = input('Digita tu email: ')
-    if email.find('@')>=0 and email.find('.')>=0:
-        print('Tu e-mail es {}'.format(email))
-    else:
-        print('Has digitado un email no valido...')
+   
+   erabiltzaileakEzabatu()
+elif opcion == '4':
+   izena = input('sartu izena:')
+   erabiltzaileakEguneratu(izena)
 else:
     print('Debes digitar un numero entre 1 y 3')
     print('=-='*20)
 
 
-def erabiltzaileaSartu():
-"""
+
 
