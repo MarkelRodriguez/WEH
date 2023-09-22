@@ -39,7 +39,7 @@ def erabiltzaileakSartu():
     conexion.close()
 
 def erabiltzaileakEzabatu():
-    izena = input('sartu izena:')
+    izena = input('sartu ezabatu izena:')
     delete_query = "DELETE FROM erabiltzailea WHERE Izena = '" + izena +"'"
     cursor.execute(delete_query)
     # Confirma los cambios en la base de datos
@@ -50,8 +50,8 @@ def erabiltzaileakEzabatu():
 
 def erabiltzaileakEguneratu(izena):
     
-    dniBerria = input('sartu Dni-a:')
-    izenaBerria = input('sartu izena:')
+    dniBerria = input('sartu Dni berria:')
+    izenaBerria = input('sartu izen berria:')
 
     update_query = "UPDATE erabiltzailea set DNI = '" + dniBerria + "', Izena = '"+izenaBerria + "'WHERE Izena = '" + izena + "'"
     cursor.execute(update_query)
@@ -76,7 +76,7 @@ elif opcion == '3':
    
    erabiltzaileakEzabatu()
 elif opcion == '4':
-   izena = input('sartu izena:')
+   izena = input('sartu eguneratu izena:')
    erabiltzaileakEguneratu(izena)
 else:
     print('Debes digitar un numero entre 1 y 3')
