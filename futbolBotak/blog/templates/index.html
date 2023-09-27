@@ -1,24 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-       
-    <meta charset="UTF-8">
-       
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-       
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
-    <link rel="stylesheet" href='{%static "css/blog.css" %}'>
-        <title>NIRE Django BLOG</title>
-</head>
-
-<body>
-        <center>
-        <h1>Kaixo django blog</h1>
-    </center>
-        <br>
+{% block content %}
     <table border="1">
         {% for post in posta %}
         <tr>
@@ -53,8 +35,5 @@
         {% endfor %}
     </table>
     <a href="add/">Gehitu posta</a>
-    
+    {% endblock content %}
 
-</body>
-
-</html>

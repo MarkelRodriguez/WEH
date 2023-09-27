@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nire Django Blog</title>
+</head>
+<body>
+    <center>
+        <h1>Kaixo django blog</h1>
+    </center>
+    <br>
+    <table border="1">
+        {% for liburua in liburuak %}
+        <tr>
+            <td>
+
+                <div>
+                    <p>
+                        <h2>{{liburua.id}}</h2>
+                    </p>
+                    <p>
+                        <h2>{{liburua.izenburua}}</h2>
+                    </p>
+                    <p>{{liburua.edukia}}</p>
+                    <p>
+                        <h2>{{liburua.noizsortua}}</h2>
+                    </p>
+                    <p>
+                        <h2>{{liburua.autorea}}</h2>
+                    </p>
+
+                
+                </div>
+
+            
+            </td>
+
+            <!--<td>
+                <a href="ezabatu/{{liburua.id}}" color="red">ezabatu</a>
+            </td>
+            <td>
+                <a href="update/{{liburua.id}}/"> aldatu</a>
+            </td>-->
+
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="addlib/">Gehitu liburua</a>
+    <br>
+    <table border="1">
+        {% for autorea in autoreak %}
+        <tr>
+            <td>
+
+                <div>
+                    <p>
+                        <h2>{{autorea.id}}</h2>
+                    </p>
+                    <p>
+                        <h2>{{autorea.izena}}</h2>
+                    </p>
+                    <p>{{autorea.abizena}}</p>
+                    <p>
+                        <h2>{{autorea.jaiotze_data}}</h2>
+                    </p>
+ 
+
+                    
+                </div>
+
+                
+            </td>
+
+            <!--<td>
+                <a href="ezabatu/{{autorea.id}}" color="red">ezabatu</a>
+            </td>
+            <td>
+                <a href="update/{{autorea.id}}/"> aldatu</a>
+            </td>-->
+
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="addauth/">Gehitu autorea</a>
+
+
+</body>
+
+</html>

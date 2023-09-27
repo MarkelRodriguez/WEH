@@ -1,0 +1,36 @@
+<!--{% load static %}-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nire Django Blog</title>
+</head>
+<body>
+    <center><h1>Post Bat Gehitzeko Ondorengo Formulario Bete</h1></center>
+    <br><br>
+
+    <form action="addliburua/" method="post">
+        {% csrf_token %}
+        
+        Liburuaren izenburua: <input type="text" name="izenburua">
+        Liburuaren edukia: <input type="text" name="edukia">
+
+        Liburuaren autorea:<select name="autorea"> 
+            {% for autorea in autoreak %}
+                <option name="autorea.izena">{{autorea.izena}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" value="submit">Post-a sortu</button>
+        
+       
+    </form>
+
+    
+
+
+</body>
+</html>
