@@ -6,10 +6,13 @@ urlpatterns = [
     path ('addlib/', views.addlib, name='addlib'),
     path ('addlib/addliburua/', views.addliburua, name='addliburua'),
     path ('addauth/', views.addauth, name='addauth'),
-    path ('addauth/addautorea/', views.addautorea, name='addautorea')
-    #path('ezabatu/<int:id>', views.deletepost,name='deletepost'),
-    #path('update/<int:id>/',views.update ,name='update'),
-    #path('updatepost/<int:id>',views.updatepost ,name='updatepost'),
+    path ('addauth/addautorea/', views.addautorea, name='addautorea'),
+    path('deleteliburua/<int:id>/', views.deleteliburua,name='deleteliburua'),
+    path('deleteautorea/<int:id>/', views.deleteautorea,name='deleteautorea'),
+    path('updatelib/<int:id>/',views.updatelib ,name='updatelib'),
+    path('updateliburua/<int:id>',views.updateliburua ,name='updateliburua'),
+    path('updateauth/<int:id>/',views.updateauth ,name='updateauth'),
+    path('updateautorea/<int:id>',views.updateautorea ,name='updateautorea'),
 
     
 ]

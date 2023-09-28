@@ -19,9 +19,9 @@
         Liburuaren izenburua: <input type="text" name="izenburua">
         Liburuaren edukia: <input type="text" name="edukia">
 
-        Liburuaren autorea:<select name="autorea"> 
+        Liburuaren autorea:<select id="autorea" name="autorea"> 
             {% for autorea in autoreak %}
-                <option name="autorea.izena">{{autorea.izena}}</option>
+                <option value="{{autorea.id}}">{{autorea.izena}}</option>
             {% endfor %}
         </select>
         <button type="submit" value="submit">Post-a sortu</button>

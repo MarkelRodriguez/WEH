@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <h1>update</h1>
+    </center>
+    <form action="/updateliburua/{{id}}" method="post">
+        {% csrf_token %}
+        Postaren izenburua: <input type="text" name="izenburua" value="{{liburua.izenburua}}">
+        Postaren edukia: <input type="text" name="edukia" value="{{liburua.edukia}}">
+        Liburuaren autorea:<select id="autorea"  name="autorea"value="{{autorea.izena}}"> 
+        {% for autorea in autoreak %}
+            <option value="{{autorea.id}}" {% if liburua.autorea.id == autorea.id %}selected{% endif %}>{{autorea.izena}}</option>
+        {% endfor %}
+        </select>
+        <button type="submit" >Post-a sortu</button>
+    </form>
+</body>
+</html>

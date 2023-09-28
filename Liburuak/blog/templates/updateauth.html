@@ -11,12 +11,12 @@
     <center><h1>Post Bat Gehitzeko Ondorengo Formulario Bete</h1></center>
     <br><br>
 
-    <form action="addautorea/" method="post">
+    <form action="/updateautorea/{{id}}" method="post">
         {% csrf_token %}
         
-        Autorearen izena: <input type="text" name="izena">
-        Autorearen abizena: <input type="text" name="abizena">
-        Autorearen jaiotze data:<input type="date" name="jaiotze_data">
+        Autorearen izena: <input type="text" name="izena" value="{{autorea.izena}}">
+        Autorearen abizena: <input type="text" name="abizena" value="{{autorea.abizena}}">
+        Autorearen jaiotze data:<input type="date" name="jaiotze_data" value="{{autorea.jaiotze_data|date:'Y-m-d'}}">
         <button type="submit" value="submit">Autorea sortu</button>
         
        

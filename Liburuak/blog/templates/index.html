@@ -29,7 +29,7 @@
                         <h2>{{liburua.noizsortua}}</h2>
                     </p>
                     <p>
-                        <h2>{{liburua.autorea}}</h2>
+                        <h2>{{liburua.autorea.izena}} {{liburua.autorea.abizena}}</h2>
                     </p>
 
                 
@@ -38,19 +38,19 @@
             
             </td>
 
-            <!--<td>
-                <a href="ezabatu/{{liburua.id}}" color="red">ezabatu</a>
+            <td>
+                <a href="deleteliburua/{{liburua.id}}" color="red">ezabatu</a>
             </td>
             <td>
-                <a href="update/{{liburua.id}}/"> aldatu</a>
-            </td>-->
+                <a href="updatelib/{{liburua.id}}/"> aldatu</a>
+            </td>
 
         </tr>
         {% endfor %}
     </table>
     <br>
     <a href="addlib/">Gehitu liburua</a>
-    <br>
+    <br><br><br>
     <table border="1">
         {% for autorea in autoreak %}
         <tr>
@@ -63,7 +63,7 @@
                     <p>
                         <h2>{{autorea.izena}}</h2>
                     </p>
-                    <p>{{autorea.abizena}}</p>
+                    <p><h2>{{autorea.abizena}}</h2></p>
                     <p>
                         <h2>{{autorea.jaiotze_data}}</h2>
                     </p>
@@ -75,16 +75,18 @@
                 
             </td>
 
-            <!--<td>
-                <a href="ezabatu/{{autorea.id}}" color="red">ezabatu</a>
+            <td>
+                <a href="deleteautorea/{{autorea.id}}" color="red">ezabatu</a>
             </td>
             <td>
-                <a href="update/{{autorea.id}}/"> aldatu</a>
-            </td>-->
+                <a href="updateauth/{{autorea.id}}/"> aldatu</a>
+            </td>
 
         </tr>
         {% endfor %}
     </table>
+    <br>
+
     <a href="addauth/">Gehitu autorea</a>
 
 
