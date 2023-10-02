@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+/* Estilo para las celdas de tabla */
+td {
+    padding: 10px;
+}
+
+/* Estilo para los enlaces */
+a {
+    text-decoration: none;
+    color: #0078d4;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #004eaa;
+}
+
+/* Estilo para los botones de eliminación */
+a.delete {
+    color: red;
+}
+
+/* Espacio entre elementos */
+br {
+    margin-bottom: 20px;
+}
+
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para el formulario */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para etiquetas y campos de entrada */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Estilo para el botón de envío */
+button[type="submit"] {
+    background-color: #0078d4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #004eaa;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    appearance: none; /* Oculta la apariencia nativa del input en algunos navegadores */
+}
